@@ -1,0 +1,11 @@
+version: '3'
+
+services: 
+  node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    image: miguelviannafeiteira/hello-express
+    container_name: express
+    ports: 
+      - "3000:3000"

@@ -1,0 +1,10 @@
+FROM node:15 AS Builder
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+EXPOSE 3000
+
+# Para criar imagem com o docker file de prod
+# docker build -t miguelviannafeiteira/nome:prod . -f Dockerfile.prod
