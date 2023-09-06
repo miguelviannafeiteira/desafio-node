@@ -6,3 +6,4 @@
 /mysql/public_key.pem
 /mysql/server-key.pem
 /mysql/server-cert.pem
+/node/node_modules
