@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 # Update stretch repositories
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
@@ -20,6 +20,3 @@ RUN apt-get update \
     && apt-get autoremove -yqq --purge wget && rm -rf /var/lib/apt/lists/*
 
 RUN npm install mysql --save
-
-
-ENTRYPOINT ["node", "index.js"]

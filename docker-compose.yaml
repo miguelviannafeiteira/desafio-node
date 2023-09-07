@@ -6,10 +6,10 @@ services:
       context: node
       dockerfile: Dockerfile
     entrypoint: dockerize -wait tcp://db:3306 node index.js
-    image: miguelviannafeiteira/hello-express
+    image: miguelviannafeiteira/app
     container_name: app
     ports: 
-      - "8080:8080"
+      - "3000:3000"
     depends_on:
       - db
     networks:
@@ -31,6 +31,21 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     networks:
       - node-network 
+
+  nginx:
+    build:
+        context: nginx
+        dockerfile: Dockerfile
+    # entrypoint: dockerize -wait 0.0.0.0:3000->3000/tcp docker-entrypoint.sh
+    image: nginx
+    container_name: nginx
+    ports:
+        - "8080:80"
+    networks: 
+        - node-network 
+    depends_on:
+        - db
+        - app
 
 networks:
   node-network:
