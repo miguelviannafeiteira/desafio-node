@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
         nameList += '</ul>'
 
         res.send(`
-            <h1>Testando</h1>
+            <h1>Full Cycle Rocks!</h1>
             ${nameList}
         `);
     })
