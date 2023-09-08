@@ -36,7 +36,6 @@ services:
     build:
         context: nginx
         dockerfile: Dockerfile
-    # entrypoint: dockerize -wait 0.0.0.0:3000->3000/tcp docker-entrypoint.sh
     image: nginx
     container_name: nginx
     ports:
