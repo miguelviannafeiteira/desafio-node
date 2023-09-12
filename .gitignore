@@ -1,8 +1,2 @@
-/mysql/ca-key.pem
-/mysql/client-key.pem
-/mysql/client-cert.pem
-/mysql/ca.pem
-/mysql/private_key.pem
-/mysql/public_key.pem
-/mysql/server-key.pem
-/mysql/server-cert.pem
+/node_modules
+/mysql
