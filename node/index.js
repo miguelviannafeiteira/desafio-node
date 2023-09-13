@@ -10,11 +10,16 @@ const config = {
 const mysql = require("mysql")
 const connection = mysql.createConnection(config)
 
-// const deletePerson = "DELETE FROM people WHERE name = 'MIGUEL'"
-// const insertPerson = "INSERT INTO people(name) value('Miguel')"
-// connection.query(insertPerson)
-
 app.get("/", (req, res) => {
+    connection.connect();
+
+    connection.query(
+        "CREATE TABLE IF NOT EXISTS people (name VARCHAR(255))"
+    )
+
+    const insertPerson = "INSERT INTO people(name) value('Miguel')"
+    connection.query(insertPerson)
+    
     const peopleTable = "SELECT * FROM people";
     connection.query(peopleTable, (err, rows) => {
         if (err) {
