@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
-COPY . .
+COPY . /usr/src/app
 
 EXPOSE 3000
 
@@ -13,7 +13,6 @@ EXPOSE 3000
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
            -e 's|security.debian.org|archive.debian.org/|g' \
            -e '/stretch-updates/d' /etc/apt/sources.list
-
 
 ENV DOCKERIZE_VERSION v0.7.0
 
